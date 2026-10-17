@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #ffffff;
+  color: #0B2A60;
+  margin: 0;
+}
+.font-firs {
+  font-family: 'TT Firs Neue', 'Sora', 'Inter', system-ui, sans-serif;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.text-brand-gradient {
+  background-image: linear-gradient(294deg, #0B2A60 20%, #1FC7D9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+h1, h2, h3 { text-wrap: balance; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #1FDFD0;
+  outline-offset: 3px;
+}
+
+/* Hero: tres fotos reales en fundido con zoom lento, a modo de video */
+@keyframes hero-fade {
+  0% { opacity: 0; transform: scale(1.04); }
+  6% { opacity: 1; }
+  33% { opacity: 1; }
+  39% { opacity: 0; transform: scale(1.12); }
+  100% { opacity: 0; transform: scale(1.12); }
+}
+.hero-slide {
+  opacity: 0;
+  animation: hero-fade 21s linear infinite;
+}
+.hero-slide:nth-child(1) { animation-delay: -1.4s; }
+.hero-slide:nth-child(2) { animation-delay: 5.6s; }
+.hero-slide:nth-child(3) { animation-delay: 12.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { animation: none; }
+  .hero-slide:nth-child(1) { opacity: 1; }
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
