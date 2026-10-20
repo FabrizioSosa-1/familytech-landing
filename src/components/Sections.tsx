@@ -55,9 +55,14 @@ export function Hero() {
           Family Tech Integrators · Perú
         </p>
         <h1 className="font-firs font-normal tracking-[-0.04em] leading-[0.9] text-[48px] sm:text-[76px] md:text-[100px] lg:text-[120px]">
-          tecnología
-          <br />
-          integral
+          <span className="sr-only">
+            Family Tech Integrators — soluciones tecnológicas e integración en Perú.{' '}
+          </span>
+          <span aria-hidden="true">
+            tecnología
+            <br />
+            integral
+          </span>
         </h1>
         <p className="mt-8 max-w-md text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium leading-[1.8] opacity-90">
           Diseñamos, instalamos y damos soporte a toda la tecnología de tu empresa, con un solo proveedor
