@@ -55,6 +55,7 @@ export function Hero() {
           Family Tech Integrators · Perú
         </p>
         <h1 className="font-firs font-normal tracking-[-0.04em] leading-[0.9] text-[48px] sm:text-[76px] md:text-[100px] lg:text-[120px]">
+          <span className="sr-only">Family Tech Integrators — soluciones tecnológicas integrales en Perú. </span>
           tecnología
           <br />
           integral

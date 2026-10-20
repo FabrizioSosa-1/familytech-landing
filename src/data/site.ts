@@ -15,7 +15,7 @@ export const empresa = {
   direccion: 'Doña Gloria 132, Urb. Los Rosales, Surco, Lima',
   correo: 'familytechintegrators@gmail.com',
   horario: '10:00 a.m. – 6:00 p.m.',
-  web: PENDIENTE as string | null,
+  web: 'ftiperu.com' as string | null,
 }
 
 export const nav = [
