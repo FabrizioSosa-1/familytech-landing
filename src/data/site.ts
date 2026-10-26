@@ -12,7 +12,7 @@ export const empresa = {
     'https://wa.me/51951543639?text=' +
     encodeURIComponent('Hola Family Tech, quiero agendar una visita técnica.'),
   direccion: 'Urb. Los Rosales, Surco, Lima',
-  correos: ['hola@ftiperu.com', 'fsosa@ftiperu.com'],
+  correos: ['fsosa@ftiperu.com', 'hola@ftiperu.com'],
   horario: '10:00 a.m. – 6:00 p.m.',
   web: 'ftiperu.com' as string | null,
 }
