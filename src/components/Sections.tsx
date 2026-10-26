@@ -3,6 +3,7 @@ import {
   BarChart3,
   Check,
   Laptop,
+  Mail,
   MessageCircle,
   ScanLine,
   ShieldCheck,
@@ -469,7 +470,14 @@ export function Contacto() {
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
-          <Dato label="Correo" value={empresa.correo} />
+          <div className="sm:col-span-2">
+            <Dato label="Correos" value={empresa.correos.join('  ·  ')} />
+            <div className="mt-4">
+              <CtaButton href={`mailto:${empresa.correos[0]}`}>
+                <Mail className="w-4 h-4" /> Enviar un correo
+              </CtaButton>
+            </div>
+          </div>
           <Dato label="Horario" value={empresa.horario} />
           <div className="sm:col-span-2">
             <Dato label="Dirección" value={empresa.direccion} />
