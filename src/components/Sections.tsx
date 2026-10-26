@@ -3,6 +3,7 @@ import {
   BarChart3,
   Check,
   Laptop,
+  Mail,
   MessageCircle,
   ScanLine,
   ShieldCheck,
@@ -466,10 +467,27 @@ export function Contacto() {
             <CtaButton href={empresa.whatsappUrl}>
               <MessageCircle className="w-4 h-4" /> WhatsApp Business
             </CtaButton>
+            <CtaButton href={empresa.correoUrl}>
+              <Mail className="w-4 h-4" /> Escríbenos un correo
+            </CtaButton>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
-          <Dato label="Correo" value={empresa.correo} />
+          <div className="border-t border-white/15 pt-4 min-w-0">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-aqua">Correo</p>
+            <a
+              href={empresa.correoUrl}
+              className="mt-1 block text-[15px] font-medium break-words hover:text-aqua transition"
+            >
+              {empresa.correo}
+            </a>
+            <a
+              href={`mailto:${empresa.correoAlt}`}
+              className="mt-0.5 block text-[15px] font-medium break-words hover:text-aqua transition"
+            >
+              {empresa.correoAlt}
+            </a>
+          </div>
           <Dato label="Horario" value={empresa.horario} />
           <div className="sm:col-span-2">
             <Dato label="Dirección" value={empresa.direccion} />
