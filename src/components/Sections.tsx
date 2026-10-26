@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {
   BarChart3,
   Check,
-  Copy,
   Laptop,
   MessageCircle,
   ScanLine,
@@ -443,18 +442,6 @@ function Dato({ label, value }: { label: string; value: string | null }) {
 }
 
 export function Contacto() {
-  const [copiado, setCopiado] = useState(false)
-  const copiar = async () => {
-    try {
-      await navigator.clipboard.writeText(empresa.whatsapp)
-      setCopiado(true)
-      setTimeout(() => setCopiado(false), 1800)
-    } catch {
-      const el = document.getElementById('wa-numero')
-      if (el) window.getSelection()?.selectAllChildren(el)
-    }
-  }
-
   return (
     <section id="contacto" data-section className="relative overflow-hidden bg-navy text-white px-6 sm:px-10 py-20 sm:py-28">
       <img src="img/equipo.webp" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-15" />
@@ -476,25 +463,12 @@ export function Contacto() {
             <CtaButton href={empresa.whatsappUrl} tone="aqua">
               <MessageCircle className="w-4 h-4" /> Pedir visita técnica
             </CtaButton>
-            <span className="flex items-center gap-2">
-              <span id="wa-numero" className="text-[18px] font-semibold tracking-wide select-all">
-                {empresa.whatsapp}
-              </span>
-              <button
-                type="button"
-                onClick={copiar}
-                className="grid place-items-center w-8 h-8 bg-white/10 hover:bg-white/20 transition"
-                style={{ clipPath: chamfer(7) }}
-                aria-label="Copiar número de WhatsApp"
-              >
-                {copiado ? <Check className="w-4 h-4 text-aqua" /> : <Copy className="w-4 h-4" />}
-              </button>
-            </span>
+            <CtaButton href={empresa.whatsappUrl}>
+              <MessageCircle className="w-4 h-4" /> WhatsApp Business
+            </CtaButton>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
-          <Dato label="WhatsApp" value={empresa.whatsapp} />
-          <Dato label="RUC" value={empresa.ruc} />
           <Dato label="Correo" value={empresa.correo} />
           <Dato label="Horario" value={empresa.horario} />
           <div className="sm:col-span-2">
@@ -506,7 +480,7 @@ export function Contacto() {
       <footer className="relative max-w-7xl mx-auto mt-20 pt-6 border-t border-white/15 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center text-[12px] text-white/60">
         <img src="img/logo-white.png" alt="Family Tech" className="h-8 w-auto" />
         <p>
-          {empresa.razon} · {empresa.claim} · RUC {empresa.ruc}
+          {empresa.razon} · {empresa.claim}
         </p>
       </footer>
     </section>

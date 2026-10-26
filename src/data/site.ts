@@ -6,13 +6,12 @@ export const PENDIENTE = null
 export const empresa = {
   nombre: 'Family Tech',
   razon: 'Family Tech Integrators',
-  ruc: '20613563548',
   claim: 'Soluciones tecnológicas integrales para empresas',
   whatsapp: '+51 951 543 639',
   whatsappUrl:
     'https://wa.me/51951543639?text=' +
     encodeURIComponent('Hola Family Tech, quiero agendar una visita técnica.'),
-  direccion: 'Doña Gloria 132, Urb. Los Rosales, Surco, Lima',
+  direccion: 'Urb. Los Rosales, Surco, Lima',
   correo: 'familytechintegrators@gmail.com',
   horario: '10:00 a.m. – 6:00 p.m.',
   web: 'ftiperu.com' as string | null,
